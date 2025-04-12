@@ -4,34 +4,43 @@ import { reactPosts } from '@data/blog/react/react';
 import { kafkaPosts } from '@data/blog/kafka/kafka';
 import { notFound } from 'next/navigation';
 import Layout from "@components/layout/Layout";
+import { BlogPost } from '@/app/types/blog';
 
-// 모든 포스트 데이터를 하나의 객체로 모음
-const allPosts = {
+// 타입 안전성을 위한 인덱스 시그니처 추가
+const allPosts: Record<string, BlogPost[]> = {
     'react': reactPosts,
     'kafka': kafkaPosts,
 };
 
+// 정적 경로 생성
 export function generateStaticParams() {
-    // 모든 카테고리의 모든 게시물 ID를 생성
-    const params = [];
+    const params: { id: string }[] = [];
 
-    for (const category in allPosts) {
+    Object.keys(allPosts).forEach((category) => {
         allPosts[category].forEach(post => {
             params.push({
                 id: post.id,
             });
         });
-    }
+    });
 
     return params;
 }
 
-export default function BlogPost({ params }: { params: { id: string } }) {
-    // 모든 카테고리에서 ID와 일치하는 게시물 찾기
-    let post = null;
+// Next.js 15.x의 PageProps 타입에 맞춰 수정
+export default async function Page({params}: {
+    params: Promise<{ id: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+    // Promise로 params와 searchParams 해결
+    const resolvedParams = await params;
+    const id = resolvedParams.id;
 
-    for (const category in allPosts) {
-        const foundPost = allPosts[category].find(post => post.id === params.id);
+    // 모든 카테고리에서 ID와 일치하는 게시물 찾기
+    let post: BlogPost | null = null;
+
+    for (const category of Object.keys(allPosts)) {
+        const foundPost = allPosts[category].find(p => p.id === id);
         if (foundPost) {
             post = foundPost;
             break;

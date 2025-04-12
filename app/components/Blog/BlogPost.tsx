@@ -71,11 +71,15 @@ export const BlogPostComponent: React.FC<BlogPostProps> = ({ post, className = '
                     className="blog-content markdown-content"
                     dangerouslySetInnerHTML={{ __html: mdContent }}
                 />
-            ) : (
+            ) : post.content ? (
                 <div
                     className="blog-content"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                 />
+            ) : (
+                <div className="blog-content">
+                    <p>이 게시물에는 내용이 없습니다.</p>
+                </div>
             )}
         </article>
     );

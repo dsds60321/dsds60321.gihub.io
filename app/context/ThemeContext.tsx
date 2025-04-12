@@ -16,6 +16,13 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const [theme, setTheme] = useState<Theme>('light');
     const [mounted, setMounted] = useState(false);
 
+    // 현재 시간에 따라 기본 테마 설정 함수
+    const getDefaultThemeByTime = (): Theme => {
+        const currentHour = new Date().getHours();
+        // 아침 6시부터 저녁 6시까지는 라이트 테마, 그 외에는 다크 테마
+        return (currentHour >= 6 && currentHour < 18) ? 'light' : 'dark';
+    };
+
     // 클라이언트 사이드에서만 실행
     useEffect(() => {
         setMounted(true);
@@ -25,8 +32,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
         if (savedTheme) {
             setTheme(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
+        } else {
+            // 저장된 테마가 없으면 시간에 따라 테마 설정
+            setTheme(getDefaultThemeByTime());
         }
     }, []);
 

@@ -5,6 +5,7 @@ import React from 'react';
 import { BlogPost } from '@/app/types/blog';
 import { remark } from 'remark';
 import html from 'remark-html';
+import Image from 'next/image';
 
 interface BlogPostProps {
     post: BlogPost;
@@ -31,9 +32,11 @@ export const BlogPostComponent: React.FC<BlogPostProps> = ({ post, className = '
         <article className={`prose max-w-none ${className}`}>
             {post.coverImage && (
                 <div className="mb-8">
-                    <img
+                    <Image
                         src={post.coverImage}
                         alt={post.title}
+                        width={800}
+                        height={400}
                         className="max-w-full max-h-[500px] w-auto rounded-lg shadow-md object-contain"
                     />
                 </div>

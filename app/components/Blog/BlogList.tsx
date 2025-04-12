@@ -1,6 +1,7 @@
 // components/Blog/BlogList.tsx
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { BlogPost } from '@/app/types/blog';
 
 interface BlogListProps {
@@ -16,9 +17,11 @@ export const BlogList: React.FC<BlogListProps> = ({ posts, className = '' }) => 
                     {post.coverImage && (
                         <div className="mb-4">
                             <Link href={`/blog/${post.id}`}>
-                                <img
+                                <Image
                                     src={post.coverImage}
                                     alt={post.title}
+                                    width={800}
+                                    height={400}
                                     className="w-full h-48 object-cover rounded-lg shadow-sm"
                                 />
                             </Link>

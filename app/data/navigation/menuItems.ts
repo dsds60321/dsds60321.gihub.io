@@ -21,7 +21,7 @@ export const menuItems: MenuItem[] = [
                 ],
             },
             {
-                title: 'Kafka',
+                title: 'MQ',
                 path: '/blog/kafka',
                 submenu: [
                     { title: 'kafka', path: '/blog/kafka' }

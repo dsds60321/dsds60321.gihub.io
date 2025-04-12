@@ -4,58 +4,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-interface MenuItem {
-    title: string;
-    path: string;
-    icon?: React.ReactNode;
-    submenu?: MenuItem[];
-}
+import { MenuItem } from '@/app/types/blog';
+import menuItems from '@data/navigation/menuItems';
 
 const Sidebar: React.FC = () => {
     const pathname = usePathname();
     const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-
-    const menuItems: MenuItem[] = [
-        {
-            title: '홈',
-            path: '/',
-            icon: '🏠',
-        },
-        {
-            title: '블로그',
-            path: '/blog',
-            icon: '📝',
-            submenu: [
-                {
-                    title: 'JavaScript',
-                    path: '/blog/javascript',
-                    submenu: [
-                        { title: 'React', path: '/blog/javascript/react' },
-                        { title: 'TypeScript', path: '/blog/javascript/typescript' },
-                    ],
-                },
-                {
-                    title: 'Backend',
-                    path: '/blog/backend',
-                    submenu: [
-                        { title: 'Node.js', path: '/blog/backend/nodejs' },
-                        { title: 'Java', path: '/blog/backend/java' },
-                    ],
-                },
-            ],
-        },
-        {
-            title: '포트폴리오',
-            path: '/portfolio',
-            icon: '💼',
-        },
-        {
-            title: '소개',
-            path: '/about',
-            icon: '👋',
-        },
-    ];
 
     const toggleSubmenu = (title: string, e?: React.MouseEvent) => {
         if (e) {
@@ -122,14 +76,16 @@ const Sidebar: React.FC = () => {
     };
 
     return (
-        <nav className="h-full py-4 overflow-y-auto dark:text-dark-primary">
-            <div className="mb-6 px-4">
-                <h1 className="text-xl font-bold">개발 블로그</h1>
+        <aside className="w-64 bg-white dark:bg-dark-primary shadow-md h-screen overflow-y-auto">
+            <div className="p-4">
+                <h2 className="text-xl font-bold mb-4">내 블로그</h2>
+                <nav>
+                    <div className="space-y-1">
+                        {menuItems.map(item => renderMenuItem(item))}
+                    </div>
+                </nav>
             </div>
-            <div className="space-y-1">
-                {menuItems.map(item => renderMenuItem(item))}
-            </div>
-        </nav>
+        </aside>
     );
 };
 

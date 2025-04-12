@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     images: {
         unoptimized: true,
     },
+    trailingSlash: true,
     basePath: '',
     assetPrefix: '',
     webpack: (config) => {

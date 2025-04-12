@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MenuItem } from '@/app/types/blog';
 import menuItems from '@data/navigation/menuItems';
+import {GLOBAL} from "@/app/constants";
 
 const Sidebar: React.FC = () => {
     const pathname = usePathname();
@@ -78,7 +79,7 @@ const Sidebar: React.FC = () => {
     return (
         <aside className="w-64 bg-white dark:bg-dark-primary shadow-md h-screen overflow-y-auto">
             <div className="p-4">
-                <h2 className="text-xl font-bold mb-4">내 블로그</h2>
+                <h2 className="text-xl font-bold mb-4">{GLOBAL.NAME} 블로그</h2>
                 <nav>
                     <div className="space-y-1">
                         {menuItems.map(item => renderMenuItem(item))}

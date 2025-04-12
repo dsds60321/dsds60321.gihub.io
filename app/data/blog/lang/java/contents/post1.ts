@@ -1,5 +1,6 @@
 // post1.ts
 import type { BlogPost } from '@/app/types/blog';
+import {GLOBAL} from "@/app/constants";
 
 export const post1: BlogPost = {
     id: 'jvm',
@@ -77,6 +78,6 @@ export const post1: BlogPost = {
     `,
     excerpt: 'JAVA 구성',
     tags: ['java', 'jvm'],
-    author: '강건호',
+    author: GLOBAL.NAME,
     coverImage: '/images/java/jvm.png'
 };

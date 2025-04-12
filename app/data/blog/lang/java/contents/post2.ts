@@ -1,5 +1,6 @@
 // post1.ts
 import type { BlogPost } from '@/app/types/blog';
+import {GLOBAL} from "@/app/constants";
 
 export const post2: BlogPost = {
     id: 'concurrent-exception',
@@ -136,6 +137,6 @@ Stream API는 Java에서 컬렉션을 처리하는 강력한 도구이지만, �
     `,
     excerpt: 'ConcurrentModificationException 이해하기',
     tags: ['java', 'stream'],
-    author: '강건호',
+    author: GLOBAL.NAME,
     coverImage: '/images/java/java.jpg'
 };

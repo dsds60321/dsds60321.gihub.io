@@ -3,6 +3,8 @@
 
 import React from 'react';
 import { useTheme } from '@/app/context/ThemeContext';
+import {GLOBAL} from "@/app/constants";
+import Link from 'next/link';
 
 interface HeaderProps {
     toggleSidebar?: () => void;
@@ -23,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) => {
                         {sidebarOpen ? '✕' : '☰'}
                     </button>
                 )}
-                <h2 className="text-lg font-medium text-gray-800 dark:text-dark-primary">개발자 블로그</h2>
+                <h2 className="text-lg font-medium text-gray-800 dark:text-dark-primary">{GLOBAL.NAME} 블로그</h2>
             </div>
             <div className="flex items-center space-x-4">
                 <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-secondary text-gray-800 dark:text-dark-primary focus:outline-none">
@@ -35,9 +37,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) => {
                 >
                     {theme === 'dark' ? '☀️' : '🌙'}
                 </button>
-                <button className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-secondary text-gray-800 dark:text-dark-primary focus:outline-none">
+                <Link href="/about" className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-secondary text-gray-800 dark:text-dark-primary focus:outline-none">
                     👤
-                </button>
+                </Link>
             </div>
         </header>
     );

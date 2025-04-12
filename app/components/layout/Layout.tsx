@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import ScrollToTop from '../ui/ScrollToTop';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -17,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
 
     return (
-        <div className="flex h-screen bg-gray-100 dark:bg-dark-secondary overflow-hidden transition-colors duration-200">
+        <div className="flex h-screen bg-gray-100 dark:bg-dark-secondary transition-colors duration-200">
             {/* 모바일 오버레이 */}
             {sidebarOpen && (
                 <div
@@ -38,12 +39,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
 
             {/* 메인 콘텐츠 */}
-            <div className="flex flex-col flex-1 overflow-hidden">
+            <div className="flex flex-col flex-1">
                 <Header toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
                 <main className="flex-1 overflow-y-auto p-4 md:p-6">
                     {children}
                 </main>
             </div>
+
+            {/* 스크롤 탑 버튼 - 전체 레이아웃 바깥에 배치 */}
+            <ScrollToTop />
         </div>
     );
 };

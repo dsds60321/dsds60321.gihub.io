@@ -1,5 +1,6 @@
 // post1.ts
 import type { BlogPost } from '@/app/types/blog';
+import {GLOBAL} from "@/app/constants";
 
 export const post1: BlogPost = {
     id: 'kafka-start',
@@ -148,6 +149,6 @@ bin/kafka-console-consumer.sh --topic chat-topic --bootstrap-server localhost:90
     `,
     excerpt: 'Kafka란?',
     tags: ['Kafka'],
-    author: '강건호',
+    author: GLOBAL.NAME,
     coverImage: '/images/kafka/kafka.png'
 };

@@ -34,7 +34,7 @@ export const BlogPostComponent: React.FC<BlogPostProps> = ({ post, className = '
                     <img
                         src={post.coverImage}
                         alt={post.title}
-                        className="w-full h-auto rounded-lg shadow-md"
+                        className="max-w-full max-h-[500px] w-auto rounded-lg shadow-md object-contain"
                     />
                 </div>
             )}

@@ -13,11 +13,10 @@ export const menuItems: MenuItem[] = [
         icon: '📝',
         submenu: [
             {
-                title: 'JavaScript',
-                path: '/blog/javascript',
+                title: 'Language',
+                path: '/blog/lang',
                 submenu: [
-                    { title: 'React', path: '/blog/javascript/react' },
-                    { title: 'TypeScript', path: '/blog/javascript/typescript' },
+                    { title: 'Java', path: '/blog/lang/java' }
                 ],
             },
             {
@@ -26,15 +25,7 @@ export const menuItems: MenuItem[] = [
                 submenu: [
                     { title: 'kafka', path: '/blog/kafka' }
                 ],
-            },
-            {
-                title: 'Backend',
-                path: '/blog/backend',
-                submenu: [
-                    { title: 'Node.js', path: '/blog/backend/nodejs' },
-                    { title: 'Java', path: '/blog/backend/java' },
-                ],
-            },
+            }
         ],
     },
     {

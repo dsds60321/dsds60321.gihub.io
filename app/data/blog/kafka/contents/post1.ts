@@ -149,5 +149,5 @@ bin/kafka-console-consumer.sh --topic chat-topic --bootstrap-server localhost:90
     excerpt: 'Kafka란?',
     tags: ['Kafka'],
     author: '강건호',
-    coverImage: '/images/react-components.jpg'
+    coverImage: '/images/kafka/kafka.png'
 };

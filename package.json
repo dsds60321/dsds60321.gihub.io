@@ -5,7 +5,7 @@
   "homepage": "https://dsds60321.github.io",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && next export && next-sitemap",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "export": "next build",

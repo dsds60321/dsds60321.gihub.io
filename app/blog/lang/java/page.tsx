@@ -2,7 +2,7 @@ import { BlogList } from '@components/Blog/BlogList';
 import {javaPosts} from '@data/blog/lang/java/java';
 import Layout from "@components/layout/Layout";
 
-export default function KafkaPage() {
+export default function JavaPage() {
     return (
         <Layout>
             <div className="container mx-auto px-4 py-12">

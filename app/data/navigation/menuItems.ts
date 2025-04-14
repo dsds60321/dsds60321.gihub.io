@@ -32,6 +32,13 @@ export const menuItems: MenuItem[] = [
                 submenu: [
                     { title: 'kafka', path: '/blog/kafka' }
                 ],
+            },
+            {
+                title: 'ETC',
+                path: '/blog/etc',
+                submenu: [
+                    { title: '개발메모', path: '/blog/etc/memo' }
+                ],
             }
         ],
     },

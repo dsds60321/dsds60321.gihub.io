@@ -15,10 +15,13 @@
     "@tailwindcss/typography": "^0.5.16",
     "gray-matter": "^4.0.3",
     "next": "15.3.0",
+    "prismjs": "^1.30.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scroll": "^1.9.3",
+    "rehype-prism-plus": "^2.0.1",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1"
   },
   "devDependencies": {

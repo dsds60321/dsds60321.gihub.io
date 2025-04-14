@@ -5,7 +5,9 @@ import React from 'react';
 import { BlogPost } from '@/app/types/blog';
 import { remark } from 'remark';
 import html from 'remark-html';
+import gfm from 'remark-gfm';
 import Image from 'next/image';
+import rehypePrism from 'rehype-prism-plus';
 
 interface BlogPostProps {
     post: BlogPost;
@@ -19,7 +21,19 @@ export const BlogPostComponent: React.FC<BlogPostProps> = ({ post, className = '
         const processMarkdown = async () => {
             if (post.md) {
                 const processedContent = await remark()
+                    .use(gfm)
                     .use(html)
+                    .use(rehypePrism, {
+                        showLineNumbers: true, // 줄 번호 표시
+                        ignoreMissing: true,
+                        aliases: {
+                            js: 'javascript',
+                            ts: 'typescript',
+                            jsx: 'javascript',
+                            tsx: 'typescript',
+                            sh: 'bash'
+                        }
+                    })
                     .process(post.md);
                 setMdContent(processedContent.toString());
             }
@@ -28,8 +42,10 @@ export const BlogPostComponent: React.FC<BlogPostProps> = ({ post, className = '
         processMarkdown();
     }, [post.md]);
 
+    // 나머지 코드는 동일
     return (
         <article className={`prose max-w-none prose-sm sm:prose ${className}`}>
+            {/* 기존 코드 유지 */}
             {post.coverImage && (
                 <div className="mb-4 sm:mb-8">
                     <Image
@@ -71,7 +87,7 @@ export const BlogPostComponent: React.FC<BlogPostProps> = ({ post, className = '
 
             <div className="blog-content markdown-content overflow-x-auto">
                 {post.md ? (
-                    <div dangerouslySetInnerHTML={{ __html: mdContent }} />
+                    <div className="prose" dangerouslySetInnerHTML={{ __html: mdContent }} />
                 ) : post.content ? (
                     <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 ) : (

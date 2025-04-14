@@ -16,7 +16,30 @@ module.exports = {
                 'dark-primary': '#ffffff',
                 'dark-secondary': '#a0a0a0',
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        table: {
+                            width: '100%',
+                            borderCollapse: 'collapse',
+                        },
+                        'thead, tbody': {
+                            borderWidth: '1px',
+                            borderColor: 'var(--tw-prose-th-borders)',
+                        },
+                        'th, td': {
+                            padding: '0.75rem',
+                            borderWidth: '1px',
+                            borderColor: 'var(--tw-prose-td-borders)',
+                        },
+                        th: {
+                            backgroundColor: 'var(--tw-prose-th-bg)',
+                        },
+                    },
+                },
+            },
         },
     },
-    plugins: [('@tailwindcss/typography')],
+    // ESLint 규칙을 피하기 위한 다른 방법
+    plugins: [import('@tailwindcss/typography')],
 }

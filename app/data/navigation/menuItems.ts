@@ -20,6 +20,13 @@ export const menuItems: MenuItem[] = [
                 ],
             },
             {
+                title: 'Spring',
+                path: '/blog/spring',
+                submenu: [
+                    { title: 'JPA', path: '/blog/spring/jpa' }
+                ],
+            },
+            {
                 title: 'MQ',
                 path: '/blog/kafka',
                 submenu: [

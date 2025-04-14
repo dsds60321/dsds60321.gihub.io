@@ -3,11 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import Layout from "@components/layout/Layout";
 
-export const metadata = {
-    title: '소개 | 강건호 포트폴리오',
-    description: '웹 애플리케이션 개발자 강건호의 프로필입니다',
-};
-
 export default function AboutPage() {
     return (
         <Layout>

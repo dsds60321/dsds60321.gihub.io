@@ -2,6 +2,9 @@
 import Layout from './components/layout/Layout';
 import { getRecentPosts } from '@data/blog/blogUtils';
 import Link from 'next/link';
+import {baseMetadata} from "@/app/lib/metadata";
+
+export const metadata = baseMetadata;
 
 export default function Home() {
     // 최근 게시물 3개 가져오기

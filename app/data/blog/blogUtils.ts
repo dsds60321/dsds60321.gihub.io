@@ -2,12 +2,14 @@
 import { BlogPost } from '@/app/types/blog';
 import { kafkaPosts } from '@data/blog/kafka/kafka';
 import { javaPosts } from '@data/blog/lang/java/java';
+import {jpaPosts} from "@data/blog/spring/jpa/jpa";
 
 /**
  * 모든 블로그 포스트를 카테고리별로 모아놓은 객체
  */
 export const allPosts: Record<string, BlogPost[]> = {
     'kafka': kafkaPosts,
+    'jpa': jpaPosts,
     'java': javaPosts,
 };
 

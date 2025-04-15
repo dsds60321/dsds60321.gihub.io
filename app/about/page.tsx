@@ -122,9 +122,9 @@ export default function AboutPage() {
                         <h3 className="font-bold text-xl">결제 창 모듈</h3>
                         <p className="text-gray-700 mb-2">자사의 온라인 결제 솔루션 개발 및 유지보수</p>
                         <div className="flex flex-wrap gap-2 mt-2">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Vue.js</span>
                             <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Node.js</span>
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Spring Boot</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">express.js</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Redis</span>
                         </div>
                     </div>
 
@@ -132,9 +132,9 @@ export default function AboutPage() {
                         <h3 className="font-bold text-xl">3DS 인증 시스템</h3>
                         <p className="text-gray-700 mb-2">신용카드 보안 강화를 위한 3DS 인증 시스템 구축</p>
                         <div className="flex flex-wrap gap-2 mt-2">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Java</span>
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Spring Boot</span>
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">MySQL</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Node.js</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">express.js</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Redis</span>
                         </div>
                     </div>
 
@@ -142,10 +142,9 @@ export default function AboutPage() {
                         <h3 className="font-bold text-xl">글로벌 어드민 시스템</h3>
                         <p className="text-gray-700 mb-2">국내외 결제 모듈 통합 관리 시스템 개발</p>
                         <div className="flex flex-wrap gap-2 mt-2">
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React.js</span>
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Node.js</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Spring</span>
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">MySQL</span>
                             <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Redis</span>
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Docker</span>
                         </div>
                     </div>
                 </div>

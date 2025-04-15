@@ -24,6 +24,7 @@ export const menuItems: MenuItem[] = [
                 path: '/blog/spring',
                 submenu: [
                     { title: 'Spring', path: '/blog/spring' },
+                    { title: 'WebFlux', path: '/blog/webflux' },
                     { title: 'JPA', path: '/blog/spring/jpa' }
                 ],
             },
@@ -32,6 +33,13 @@ export const menuItems: MenuItem[] = [
                 path: '/blog/kafka',
                 submenu: [
                     { title: 'kafka', path: '/blog/kafka' }
+                ],
+            },
+            {
+                title: 'JS',
+                path: '/blog/js',
+                submenu: [
+                    { title: 'react', path: '/blog/js/react' }
                 ],
             },
             {

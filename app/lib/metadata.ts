@@ -8,6 +8,9 @@ export const  baseMetadata: Metadata = {
         template: `${GLOBAL.NAME} | 내 블로그`
     },
     description: '웹 개발, 프로그래밍, 기술 트렌드에 관한 개발자의 블로그입니다.',
+    icons: {
+        icon: "/favicon.ico",
+    },
     keywords: ['개발', '프로그래밍', '웹개발', '기술블로그', '코딩'],
     authors: [{ name: '강건호', url: 'https://github.com/dsds60321' }],
     creator: '작성자 이름',

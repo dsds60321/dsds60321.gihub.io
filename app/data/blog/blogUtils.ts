@@ -4,6 +4,7 @@ import { kafkaPosts } from '@data/blog/kafka/kafka';
 import { javaPosts } from '@data/blog/lang/java/java';
 import {jpaPosts} from "@data/blog/spring/jpa/jpa";
 import {memoPosts} from "@data/blog/etc/memo/memo";
+import {springPosts} from "@data/blog/spring/default/spring";
 
 /**
  * 모든 블로그 포스트를 카테고리별로 모아놓은 객체
@@ -11,6 +12,7 @@ import {memoPosts} from "@data/blog/etc/memo/memo";
 export const allPosts: Record<string, BlogPost[]> = {
     'kafka': kafkaPosts,
     'jpa': jpaPosts,
+    'spring': springPosts,
     'java': javaPosts,
     'memo': memoPosts,
 };

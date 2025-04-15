@@ -23,6 +23,7 @@ export const menuItems: MenuItem[] = [
                 title: 'Spring',
                 path: '/blog/spring',
                 submenu: [
+                    { title: 'Spring', path: '/blog/spring' },
                     { title: 'JPA', path: '/blog/spring/jpa' }
                 ],
             },
